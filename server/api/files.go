@@ -53,6 +53,12 @@ func isPathAllowed(reqPath string) (string, bool) {
 	}
 
 	for _, base := range allowedBases {
+
+		//debug
+		fmt.Printf("DEBUG: requested path: [%s] \n", reqPath)
+		fmt.Printf("DEBUG: clean path: [%s] \n", clean)
+		fmt.Printf("DEBUG: base path: [%s] \n", base)
+		
 		if strings.HasPrefix(clean, base) || clean == base {
 			return clean, true
 		}
